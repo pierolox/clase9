@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <title>Academia Triunfadores</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/galeria.css">
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/logo.png" alt="" width="80px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galeria</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="contactos.html">Contactos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mapa mt-5 pt-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1640.5737164866864!2d-77.0305766598973!3d-12.046006728785503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b5d5aa7eb1%3A0x16061e0b481e22aa!2sLima%20Main%20Square!5e0!3m2!1sen!2spe!4v1794343011299!5m2!1sen!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <div class="contactos my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="envio.php" method="POST">
+                                <p>apellidos y nombres</p>
+                                <input type="text" class="form-control" placeholder="Ingrese sus apellidos y nombres" name="nombres">
+                                <br>
+                                <p>Dirección</p>
+                                <input type="text" class="form-control" placeholder="Ingrese su dirección" name="direction">
+                                <br>
+                                <p>Correo</p>
+                                <input type="email" class="form-control" placeholder="Ingrese su correo" name="correo">
+                                <br>
+                                <p>Comentarios</p>
+                                <textarea class="form-control" cols="30" name="comentarios"></textarea>
+                                <br>
+                                <button class="bg-dark form-control text-white">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social bg-dark py-5">
+        <div class="redes text-white text-center" style="font-size: 30px;">
+            <i class="bi bi-facebook m-3"></i>
+            <i class="bi bi-instagram m-3"></i>
+            <i class="bi bi-youtube m-3"></i>
+            <i class="bi bi-twitter m-3"></i>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container">
+            <p class="text-center">Todo los derechos reservados &copy; a Piero Capcha</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+
+    <script>
+        $(".img-galeria").click(function (a) {
+            let img = a.target.src;
+            let modelo = '<div class="modelo"><img src=" '+img+' " alt="" class="img-modelo"><div class="cerrar">X</div></div>';
+        $("body, html").append(modelo);
+        
+        $(".cerrar").click(function () {
+            $(".modelo").remove();
+        });
+
+        $(window).keyup(function (e){
+            if(e.which == 27){
+                $(".modelo").hide();
+            }
+        })
+
+        });
+    </script>
+</body>
+
+</html>
